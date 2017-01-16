@@ -90,7 +90,7 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
 {
     if(oldstate == PLAYER_STATE_ONFOOT && newstate == PLAYER_STATE_DRIVER) 
     {
-      SetTimerEx("CheckVehicleHealth", 1000, 1, "i",  playerid);
+      Checkvehicle[playerid] = SetTimerEx("CheckVehicleHealth", 1000, 1, "i",  playerid);
     }
 
     if(oldstate == PLAYER_STATE_DRIVER && newstate == PLAYER_STATE_ONFOOT)
