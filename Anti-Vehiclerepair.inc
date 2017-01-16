@@ -1,5 +1,6 @@
 #include <a_samp> //SA-MP Team
 
+
 /*
 
 @ Titel: Anti-Vehicle Repair
@@ -61,10 +62,7 @@ forward OnPlayerVehicleHealthHack(playerid);
 
 //Callbacks
 
-public OnPlayerVehicleHealthHack(playerid) //You might want to move this into your gamemode.
-{
-  return 1;
-}
+
 
 public OnPlayerDisconnect(playerid, reason)
 {
