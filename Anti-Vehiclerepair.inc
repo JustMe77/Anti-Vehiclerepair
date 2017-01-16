@@ -5,7 +5,7 @@
 
 @ Titel: Anti-Vehicle Repair
 @ Author: JustMe.77
-@ Version: 1.0.0
+@ Version: 1.0.1
 @ Download: <https://github.com/JustMe77/Anti-Vehiclerepair>
 
 
@@ -81,6 +81,22 @@ public OnVehicleSpawn(vehicleid)
 
   #if defined AntiRepair_OnVehicleSpawn
   return AntiRepair_OnVehicleSpawn(vehicleid);
+  #else
+  return 1;
+  #endif
+}
+
+public OnPlayerEnterVehicle(playerid, vehicleid, ispassenger)
+{ 
+  new Float:Vehiclehealth;
+  GetVehicleHealth(vehicleid, Vehiclehealth);
+  if(Vehiclehealth > MAX_VEHICLEHEALTH)
+  {
+    SetVehicleHealth(vehicleid, MAX_VEHICLEHEALTH);
+  }
+
+  #if defined AntiRepair_OnPlayerEnterVehicle
+  return AntiRepair_OnPlayerEnterVehicle(playerid, vehicleid, ispassenger);
   #else
   return 1;
   #endif
@@ -199,6 +215,16 @@ forward AntiRepair_OnPlayerStateChange();
 forward AntiRepair_OnEnterExitModShop();
 #endif
 
+#if defined _ALS_OnPlayerEnterVehicle
+#undef OnPlayerEnterVehicle
+#else
+#define _ALS_OnPlayerEnterVehicle
+#endif
+
+#define OnPlayerEnterVehicle AntiRepair_OnPlayerEnterVehicle
+#if defined AntiRepair_OnPlayerEnterVehicle
+forward AntiRepair_OnPlayerEnterVehicle();
+#endif
 
 //Function Hooks
 
