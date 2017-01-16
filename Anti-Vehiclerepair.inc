@@ -1,12 +1,11 @@
 #include <a_samp> //SA-MP Team
 
-
 /*
 
 @ Titel: Anti-Vehicle Repair
 @ Author: JustMe.77
 @ Version: 1.0.0
-@ Download: <Insert Download Link here>
+@ Download: <https://github.com/JustMe77/Anti-Vehiclerepair>
 
 
 Credits: 
@@ -32,19 +31,6 @@ Protected/Hooked Callbacks / Functions:
 @ RepairVehicle
 @ SetVehicleToRespawn
 @ SetVehicleHealth
-
-
-Example Usage (in Gamemode):
-
-#include <a_samp>
-#include <Anti-Vehiclehack>
-
-public OnPlayerVehicleHealthHack(playerid)
-{
-  SendClientMessage(playerid, -1, "You've been banned for Vehicle Health-Hack");
-  Ban(playerid);
-  return 1;
-}
 
 */
 
