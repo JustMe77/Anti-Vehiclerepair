@@ -151,7 +151,7 @@ public CheckVehicleHealth(playerid)
   {
     if(IsPlayerInRangeOfPoint(playerid, 10, PAYNSPRAY[i][0], PAYNSPRAY[i][1], PAYNSPRAY[i][2]))
     {
-      if(Vehiclehealth >= 1000 && GetPlayerState(playerid) == PLAYER_STATE_DRIVER)
+      if(Vehiclehealth > MAX_VEHICLEHEALTH && GetPlayerState(playerid) == PLAYER_STATE_DRIVER)
       {
         SetVehicleHealth(GetPlayerVehicleID(playerid), MAX_VEHICLEHEALTH);
         return 1;
@@ -159,7 +159,7 @@ public CheckVehicleHealth(playerid)
     }
   }
 
-  if(Vehiclehealth >= 1000 && GetPlayerState(playerid) == PLAYER_STATE_DRIVER && PlayerInModShop[playerid] == false)
+  if(Vehiclehealth > MAX_VEHICLEHEALTH && GetPlayerState(playerid) == PLAYER_STATE_DRIVER && PlayerInModShop[playerid] == false)
   {
     SetVehicleToRespawn(GetPlayerVehicleID(playerid));
     OnPlayerVehicleHealthHack(playerid);
